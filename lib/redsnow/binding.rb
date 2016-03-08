@@ -4,7 +4,7 @@ module RedSnow
   # expose function free() to allow release memory allocated by C-interface
   module Memory
     extend FFI::Library
-    ffi_lib FFI::Library::LIBC
+    ffi_lib("/usr/lib/libc.dylib")
 
     attach_function :free, [:pointer], :void
   end
